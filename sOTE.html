@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>First 2 Lessons </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #ddd;
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #222;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    nav a {
+      color: #aaa;
+      margin: 0 12px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .buttons a {
+      margin-left: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-btn {
+      border: 1px solid #fff;
+      color: #000;
+      background: #fff;
+    }
+
+    .contact-btn {
+      background: #222;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    .hero {
+      padding: 100px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .terminal-block {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.9rem;
+      color: #f26d3d;
+      display: block;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .terminal-block code {
+      color: #f26d3d;
+      overflow-wrap: anywhere;
+    }
+
+    .trusted {
+    background: #0d0d0d; /* dark terminal look */
+    border-radius: 10px;
+    padding: 20px;
+    font-family: "Courier New", monospace;
+    color: #0f0; /* terminal green */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+    max-width: 400px;
+    margin: 40px 0 40px 40px; /* top, right, bottom, left */
+    text-align: left;
+  }
+
+  .trusted h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00ff99;
+    border-bottom: 1px solid rgba(0, 255, 100, 0.4);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .limit-line {
+    background: rgba(0, 255, 100, 0.05);
+    border-left: 3px solid #00ff99;
+    padding: 6px 10px;
+    margin: 6px 0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .limit-line:hover {
+    background: rgba(0, 255, 100, 0.1);
+    transform: translateX(4px);
+  }
+  
+  .limits-container {
+  display: flex;
+  flex-wrap: wrap;           /* responsive for smaller screens */
+  gap: 40px;                 /* space between the two panels */
+  margin-left: 40px;         /* same left margin as before */
+    }
+    
+
+.limits-container .trusted {
+  color: #f33;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.limits-container .trusted h1 {
+  color: #ff4444;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.4);
+}
+
+.limits-container .trusted .limit-line {
+  border-left: 3px solid #ff4444;
+}
+
+.limits-container .trusted .limit-line:hover {
+  background: rgba(255, 0, 0, 0.1);
+}
+
+
+.checks {
+  background-color: #0f0f0f;
+  color: #00ff88;
+  border-left: 4px solid #00ff88;
+  padding: 40px;
+  margin: 60px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.checks h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.checks .subtitle {
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.checks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.checklist {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 255, 136, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.checklist:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.checklist h2 {
+  margin-bottom: 10px;
+  color: #00ffaa;
+  border-bottom: 1px solid #00ffaa;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.checklist ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  margin: 6px 0;
+  padding-left: 10px;
+  border-left: 2px solid #00ffaa33;
+  font-family: monospace;
+}
+
+.checklist li::first-letter {
+    font-size: 1.5em;      /* bigger first letter */
+    font-weight: bold;     /* bold */
+    color: #ff4444;        /* red for emphasis */
+    margin-right: 4px;     /* small space after the letter */
+}
+
+
+  sub {
+    font-size: 0.7em;
+    vertical-align: sub;
+  }
+
+    .logos {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      filter: grayscale(100%) brightness(0.9);
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+
+    .logos img {
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      color: #ccc;
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .cookie-buttons button {
+      margin-left: 12px;
+      padding: 6px 12px;
+      background: #fff;
+      border: none;
+      font-weight: bold;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .cookie-buttons .deny {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #777;
+    }
+    
+    .hero em {
+    border-left: 3px solid #888;
+    margin: 8px 0 0 0;
+    padding-left: 10px;
+    font-style: italic;
+    color: #03A062;
+    font-family: 'Courier New', monospace;
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .logos {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">★ PRE FLIGHT CHECKS & BRIEFINGS</div>
+    <nav>
+      <a href="#">DON'T</a>
+      <a href="#">TOUCH</a>
+      <a href="#">THESE</a>
+      <a href="#">BUTTONS</a>
+    </nav>
+    <div class="buttons">
+      <a class="login-btn" href="#">Or This</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Departure Briefing</h1>
+    <p>
+      Change as necessary, for the current day & runway in use. Have to get the preferrable runway before
+      doing it so make initial radio call first
+      </p>
+
+    <div class="terminal-block">
+        <div>
+          <code>&gt;  Today is going to be a VFR departure using Runway 13/31 to Training Area via Kalamon</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+            <code>&gt;   We expect to taxi right, left, then via Hotel & Foxtrot to Holding Point Alpha/Bravo</code>
+            <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Our speeds today will be 54 V_rotate, 76 Initial Climb, & 86 MCP Climb</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  In case of abnormal indications before V_r, the captain willl call STOP, throttle to idle, and apply
+      brakes as necessary to stop</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;   In case of an emergency after V_r with sufficient runway remaining, the captain will call LAND, pitch down
+      as necessary, and apply brakes as necessary to stop on the runway.</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  In the event of an emergency after V_r with insufficient runway remaining, the captain will call land, we will
+      glide at best glide speed, and look for a field within 30degrees of the runway heading using flaps as necessary.</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  In a flyable emergency we will join the downwind and land back at the aerodrome</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  In all real emergencys the captain will take controls and communications.</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  The runway today is dry/wet and we will plan accordingly</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Any questions?</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Departure briefing complete</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+    </div>
+    </section>
+    
+      <!-- Hero -->
+  <section class="hero">
+    <h1>Arrival Briefing</h1>
+    <p>
+      Make initial radio call to Lydia Radio when switching from Kavala Tower to get runway in use. Consider
+      most logical entry then make the arrival briefing
+      </p>
+
+    <div class="terminal-block">
+        <div>
+          <code>&gt;  This is going to be a VFR arrival to Lydia via KALAMON/RUPOUL/SYLLA via IP13 at 1700'</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+            <code>&gt;   We expect an OVERHEAD/DEADSIDE entry for LEFT/RIGHT circuit to RUNWAY 13/31</code>
+            <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  We will fly the circuit at traffic pattern altitude of 1000'/1200' and will be targetting
+          a speed of 81kt IAS on base and 60 on final.</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Today we expect to correct for LEFT/RIGHT X-Wind (if applicable)</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;   Any questions?</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
+        </div>
+        <br/>
+    </div>
+    </section>
+
+      <!-- Hero -->
+  <section class="hero">
+    <h1>Radio Calls</h1>
+    <p>
+      Order of the most common radio calls I've made. Sometimes some especially to Kavala are skipped if they ask
+      to report later or you can't get on the radio and be heard. Write down what time/location they want you to report.
+      Don't forget to shorten the call-sign if LYDIA or KAVALA does first.
+    </p>
+
+    <div class="terminal-block">
+        <div>
+          <code>&gt;  Initial Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 Lydia Radio, good morning, F-HXCD on Stand 22, radio check and confirm you have received our flight plan.
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Before Taxi LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD Taxi Instructions
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Holding Short to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD ready for departure/ready for backtrack and departure (depending on RWY 13/31)
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Downwind Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD established RIGHT/LEFT downwind RWY 13/31 climbing to 3000 overhead the station.
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Final Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD switching to Kavala
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Initial Call to KAVALA APPROACH</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 Kavala approach, good morning, F-HXCD overhead Lydia at 3000 requesting 4500 to KALAMON for ALISTRATI TRAINING AREA 
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Overhead Kalamon or Entering Alistrati to KAVALA APPROACH</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD entering ALISTRATI area at 4500' remain at the area from 4500' to VFR minima for 15 minutes
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Leaving Training Area to KAVALA APPROACH</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD leaving ALISTRATI area at 4000' request rejoin to LYDIA via KALAMON 2000' at KALAMON 25(time)
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Final Call to KAVALA APPROACH</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD overhead Kalamon switching to Lydia
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Initial Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 Lydia Radio, F-HXCD hello again, we are overhead KALAMON at 2000 towards IP13
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  IP13 Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                 F-HXCD over IP13 1700' for OVERHEAD/DOWNWIND entry to RWY 13/31 for FULL STOP/TOUCH & GO
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Downwind Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                F-HXCD on LEFT/RIGHT downwind RWY 13/31 for FULL STOP/TOUCH & GO
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Base Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                F-HXCD on LEFT/RIGHT base RWY 13/31 for FULL STOP/TOUCH & GO
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Final Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                F-HXCD final RWY 13/31 for FULL STOP/TOUCH & GO
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Vacated to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                F-HXCD vacated via A/B/C
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+        <div>
+          <code>&gt;  Final Call to LYDIA RADIO</code>
+          <button style="background:none;border:none;color:#888;cursor:pointer;">✈️</button>
+          <br/>
+          <blockquote>
+             <em>
+                F-HXCD shutting down
+             </em>
+         </blockquote>
+        </div>
+        <br/>
+       </div>
+    </section>
+    
+    
+    
+    <div class="limits-container">
+      <div class="trusted">
+        <h1>• LIMITS</h1>
+        <div class="limit-line">V<sub>Ne</sub> = 156 KIAS</div>
+        <div class="limit-line">V<sub>No</sub> = 131 KIAS</div>
+        <div class="limit-line">V<sub>A</sub> = 121 KIAS</div>
+        <div class="limit-line">V<sub>Fe</sub> = 88 KIAS</div>
+        <br/>
+        <div class="limit-line">MAX T/O POWER = 5800RPM for 5min</div>
+        <div class="limit-line">MCP = 5500RPM</div>
+        <div class="limit-line">CRUISE SETTING = 5150RPM</div>
+        <div class="limit-line">MIN IDLE = 1400RPM</div>
+        <br/>
+        <div class="limit-line">MAX +g = +4g (No Flaps) | +2g F<sub>e</sub></div>
+        <div class="limit-line">MAX -g = -2g (No Flaps) | 0g F<sub>e</sub></div>
+        <br/>
+        <div class="limit-line">TOTAL FUEL = 104l</div>
+        <div class="limit-line">UNUSABLE FUEL = 4l</div>
+        <br/>
+        <div class="limit-line">SERVICE CEILING = FL160</div>
+        <div class="limit-line">SERVICE CEILING MOGAS = FL120</div>
+        <br/>
+        <div class="limit-line">MAX DEMONSTRATED X-WIND = 18kt G 25</div>
+      </div>
+
+  <!-- ✅ SECOND IDENTICAL LIMITS PANEL -->
+     <div class="trusted">
+        <h1>• SPEEDS</h1>
+        <div class="limit-line">BEST GLIDE (No FLAP) = 76 KIAS</div>
+        <div class="limit-line">10:1 GLIDE RATIO</div>
+        <div class="limit-line">BEST GLIDE (Flaps T/O) = 70 KIAS</div>
+        <div class="limit-line">LDG SPEED (Flaps LDG) = 60 KIAS</div>
+        <br/>
+        <div class="limit-line">APP SPEED (FLAPS UP) = 76 KIAS</div>
+        <div class="limit-line">APP SPEED (FLAPS T/O) = 68 KIAS</div>
+        <br/>
+        <div class="limit-line">TERRAIN CLEARANCE = 62 KIAS (FLAPS T/O)</div>
+        <br/>
+        <div class="limit-line">V<sub>S</sub> Flaps UP = 59 KIAS</sub></div>
+        <div class="limit-line">V<sub>S</sub> Flaps T/O = 52 KIAS</sub></div>
+        <div class="limit-line">V<sub>S</sub> Flaps LDG = 46 KIAS</sub></div>
+     </div>
+    </div>
+    
+    <section class="checks">
+  <h1>• IN-FLIGHT CHECKS</h1>
+  <p class="subtitle">Essential items to verify while airborne</p>
+
+  <div class="checks-grid">
+    <div class="checklist">
+      <h2>LEFT (Every 1000')</h2>
+      <ul>
+        <li>Lookout</li>
+        <li>Engine (Parameteres in the Green)</li>
+        <li>Fuel (Sufficient)</li>
+        <li>Temperature (EGT)</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h2>FREDA (Every 15')</h2>
+      <ul>
+        <li>Fuel (Sufficient)</li>
+        <li>Radio (Still on correct frequency)</li>
+        <li>Engine Instruments (All Green)</li>
+        <li>Direction (Check and set heading bug too if necessary)</li>
+        <li>Altitude (On assigned)</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h2>HASELL (For some exercises)</h2>
+      <ul>
+        <li>Height (min 3000' AGL)</li>
+        <li>Airframe (Flaps, trim...)</li>
+        <li>Security (Nothing Loose, seatbelts fastened)</li>
+        <li>Engine (All parameters green)</li>
+        <li>Location (Not over city, inside training area)</li>
+        <li>Lookout (2 x 90° or 1 x 180° turn</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h2>CASHIF (Downwind)</h2>
+      <ul>
+        <li>Clearance (make call)</li>
+        <li>Airframe (Landing light on)</li>
+        <li>Security (Nothing loose, seatbelts on)</li>
+        <li>Height (1000' or 1200' depending on RWY)</li>
+        <li>Instruments (All Green)</li>
+        <li>Fuel (Sufficient)</li>
+      </ul>
+    </div>
+
+    <div class="checklist">
+      <h2>CASH (On Final)</h2>
+      <ul>
+        <li>Clearance (make call)</li>
+        <li>Airframe (Flaps LDG)</li>
+        <li>Speed (60 KIAS)</li>
+        <li>Height (Check PAPI or known points)</li
+      </ul>
+    </div>
+  </div>
+</section>
+</body>
+</html>
