@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>First Few Lessons </title>
+  <title>First 2 Lessons </title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet"/>
   <style>
     body {
@@ -76,6 +76,12 @@
       color: #aaa;
       margin-bottom: 30px;
     }
+	
+	.highlight {
+    color: #1E90FF; /* blue color */
+    text-decoration: underline;
+    font-weight: bold; /* optional, makes it stand out more */
+}
 
     .terminal-block {
       background: #111;
@@ -116,6 +122,11 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+  
+  .underline-italic {
+    text-decoration: underline;
+    font-style: italic;
+}
 
   .limit-line {
     background: rgba(0, 255, 100, 0.05);
@@ -171,6 +182,8 @@
 .checks h1 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #00ff88;
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
 }
 
 .checks .subtitle {
@@ -200,7 +213,7 @@
 
 .checklist h2 {
   margin-bottom: 10px;
-  color: #00ffaa;
+  color: #f26d3d;
   border-bottom: 1px solid #00ffaa;
   padding-bottom: 5px;
   font-size: 1.2rem;
@@ -215,8 +228,10 @@
 .checklist li {
   margin: 6px 0;
   padding-left: 10px;
-  border-left: 2px solid #00ffaa33;
+  border-left: 2px solid #00ffaa33; /* optional: adjust for green consistency */
   font-family: monospace;
+  color: #00ff88;  /* change from #0f0 to this exact green */
+  text-shadow: 0 0 4px rgba(0, 255, 136, 0.3);
 }
 
 .checklist li::first-letter {
@@ -316,40 +331,41 @@
   <section class="hero">
     <h1>Departure Briefing</h1>
     <p>
-      Update according to the current day and active runway. Make the initial radio call to confirm the preferred runway before proceeding.
+      Change as necessary, for the current day & runway in use. Have to get the preferrable runway before
+      doing it so make initial radio call first
       </p>
 
     <div class="terminal-block">
         <div>
-          <code>&gt;  Today is going to be a VFR departure using Runway 13/31 to Training Area via Kalamon</code>
+          <code>&gt;  Today is going to be a VFR departure using <span class = "highlight">Runway 13/31</span> to <span class = "highlight">Sitagroi</span> via <span class = "highlight">Kalamon</span></code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-            <code>&gt;   We expect to taxi right, left, then via Hotel & Foxtrot to Holding Point Alpha/Bravo</code>
+            <code>&gt;   We expect to taxi right, left, then via Hotel & Foxtrot to Holding Point <span class = "highlight">Alpha/Bravo</span></code>
             <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;  Our speeds today will be 54 V_rotate, 76 Initial Climb, & 86 MCP Climb</code>
+          <code>&gt;  Our speeds today will be 54 V<sub>rotate</sub>, 76 Initial Climb, & 86 MCP Climb</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;  In case of abnormal indications before V_r, the captain willl call STOP, throttle to idle, and apply
+          <code>&gt;  In case of abnormal indications before V<sub>rotate</sub>, the captain willl call STOP, throttle to idle, and apply
       brakes as necessary to stop</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;   In case of an emergency after V_r with sufficient runway remaining, the captain will call LAND, pitch down
+          <code>&gt;   In case of an emergency after V<sub>r</sub> with sufficient runway remaining, the captain will call LAND, pitch down
       as necessary, and apply brakes as necessary to stop on the runway.</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;  In the event of an emergency after V_r with insufficient runway remaining, the captain will call land, we will
-      glide at best glide speed, and look for a field within 30degrees of the runway heading using flaps as necessary.</code>
+          <code>&gt;  In the event of an emergency after V<sub>r</sub> with insufficient runway remaining, the captain will call land, we will
+      glide at best glide speed, and look for a field within 30 degrees of the runway heading using flaps as necessary.</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
@@ -359,12 +375,12 @@
         </div>
         <br/>
         <div>
-          <code>&gt;  In all real emergencys the captain will take controls and communications.</code>
+          <code>&gt;  In all real emergencies the captain will take controls and communications.</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;  The runway today is dry/wet and we will plan accordingly</code>
+          <code>&gt;  The runway today is <span class = "highlight">dry/wet</span> and we will plan accordingly</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
@@ -385,28 +401,29 @@
   <section class="hero">
     <h1>Arrival Briefing</h1>
     <p>
-      Make the initial radio call to Lydia Radio when switching from Kavala Tower to confirm the active runway. Determine the most logical entry, then complete the arrival briefing.
+      Make initial radio call to Lydia Radio when switching from Kavala Tower to get runway in use. Consider
+      most logical entry then make the arrival briefing
       </p>
 
     <div class="terminal-block">
         <div>
-          <code>&gt;  This is going to be a VFR arrival to Lydia via KALAMON/RUPOUL/SYLLA via IP13 at 1700'</code>
+          <code>&gt;  This is going to be a VFR arrival to Lydia via <span class = "highlight">KALAMON/RUPOUL/SYLLA</span> via <span class = "highlight">IP13</span> at <span class = "highlight">1700'</span></code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-            <code>&gt;   We expect an OVERHEAD/DEADSIDE entry for LEFT/RIGHT circuit to RUNWAY 13/31</code>
+            <code>&gt;   We expect an <span class = "highlight">OVERHEAD/DEADSIDE</span> entry for <span class = "highlight">LEFT/RIGHT</span> circuit to <span class = "highlight">RUNWAY 13/31</span></code>
             <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;  We will fly the circuit at traffic pattern altitude of 1000'/1200' and will be targetting
+          <code>&gt;  We will fly the circuit at traffic pattern altitude of <span class = "highlight">1000'/1200'</span> and will be targetting
           a speed of 81kt IAS on base and 60 on final.</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
         <div>
-          <code>&gt;  Today we expect to correct for LEFT/RIGHT X-Wind (if applicable)</code>
+          <code>&gt;  Today we expect to correct for <span class = "highlight">LEFT/RIGHT</span> X-Wind (if applicable)</code>
           <button style="background:none;border:none;color:#888;cursor:pointer;">✔️</button>
         </div>
         <br/>
@@ -422,7 +439,9 @@
   <section class="hero">
     <h1>Radio Calls</h1>
     <p>
-      Typical order of radio calls. Some, especially to Kavala, may be skipped if requested or if radio contact is difficult. Note the time and location for reporting, and shorten the call-sign if LYDIA or KAVALA initiates first.
+      Order of the most common radio calls I've made. Sometimes some especially to Kavala are skipped if they ask
+      to report later or you can't get on the radio and be heard. Write down what time/location they want you to report.
+      Don't forget to shorten the call-sign if LYDIA or KAVALA does first.
     </p>
 
     <div class="terminal-block">
@@ -432,7 +451,7 @@
           <br/>
           <blockquote>
              <em>
-                 Lydia Radio, good morning, F-HXCD on Stand 22, radio check and confirm you have received our flight plan.
+                 Lydia Radio, good morning, <span class="underline-italic">F-HXCD</span> on Stand <span class="underline-italic">22</span>, radio check and confirm you have received our flight plan.
              </em>
          </blockquote>
         </div>
@@ -443,7 +462,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD Taxi Instructions
+                 <span class="underline-italic">F-HXCD</span> Taxi Instructions
              </em>
          </blockquote>
         </div>
@@ -454,7 +473,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD ready for departure/ready for backtrack and departure (depending on RWY 13/31)
+                 <span class="underline-italic">F-HXCD</span> ready for <span class="underline-italic">departure/backtrack and departure</span> (depending on RWY 13/31)
              </em>
          </blockquote>
         </div>
@@ -465,7 +484,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD established RIGHT/LEFT downwind RWY 13/31 climbing to 3000 overhead the station.
+                 <span class="underline-italic">F-HXCD</span> established <span class="underline-italic">RIGHT/LEFT</span> downwind <span class="underline-italic">RWY 13/31</span> climbing to 3000 overhead the station.
              </em>
          </blockquote>
         </div>
@@ -476,7 +495,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD switching to Kavala
+                 <span class="underline-italic">F-HXCD</span> switching to Kavala
              </em>
          </blockquote>
         </div>
@@ -487,7 +506,7 @@
           <br/>
           <blockquote>
              <em>
-                 Kavala approach, good morning, F-HXCD overhead Lydia at 3000 requesting 4500 to KALAMON for ALISTRATI TRAINING AREA 
+                 Kavala approach, good morning, <span class="underline-italic">F-HXCD</span> overhead Lydia at 3000 requesting <span class="underline-italic">4500</span> to <span class="underline-italic">KALAMON</span> for <span class="underline-italic">ALISTRATI TRAINING AREA</span> 
              </em>
          </blockquote>
         </div>
@@ -498,7 +517,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD entering ALISTRATI area at 4500' remain at the area from 4500' to VFR minima for 15 minutes
+                 <span class="underline-italic">F-HXCD</span> entering <span class="underline-italic">ALISTRATI</span> area at 4500' remain at the area from <span class="underline-italic">4500'</span> to VFR minima for <span class="underline-italic">15 minutes</span>
              </em>
          </blockquote>
         </div>
@@ -509,7 +528,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD leaving ALISTRATI area at 4000' request rejoin to LYDIA via KALAMON 2000' at KALAMON 25(time)
+                 <span class="underline-italic">F-HXCD</span> leaving <span class="underline-italic">ALISTRATI</span> area at <span class="underline-italic">4000'</span> request rejoin to LYDIA via <span class="underline-italic">KALAMON 2000'</span> at <span class="underline-italic">KALAMON 25</span>(time)
              </em>
          </blockquote>
         </div>
@@ -520,7 +539,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD overhead Kalamon switching to Lydia
+                 <span class="underline-italic">F-HXCD</span> overhead <span class="underline-italic">Kalamon</span> switching to Lydia
              </em>
          </blockquote>
         </div>
@@ -531,7 +550,7 @@
           <br/>
           <blockquote>
              <em>
-                 Lydia Radio, F-HXCD hello again, we are overhead KALAMON at 2000 towards IP13
+                 Lydia Radio, <span class="underline-italic">F-HXCD</span> hello again, we are overhead <span class="underline-italic">KALAMON</span> at <span class="underline-italic">2000</span> towards <span class="underline-italic">IP13</span>
              </em>
          </blockquote>
         </div>
@@ -542,7 +561,7 @@
           <br/>
           <blockquote>
              <em>
-                 F-HXCD over IP13 1700' for OVERHEAD/DOWNWIND entry to RWY 13/31 for FULL STOP/TOUCH & GO
+                 <span class="underline-italic">F-HXCD</span> over <span class="underline-italic">IP13 1700'</span> for <span class="underline-italic">OVERHEAD/DOWNWIND</span> entry to <span class="underline-italic">RWY 13/31</span> for <span class="underline-italic">FULL STOP/TOUCH & GO</span>
              </em>
          </blockquote>
         </div>
@@ -553,7 +572,7 @@
           <br/>
           <blockquote>
              <em>
-                F-HXCD on LEFT/RIGHT downwind RWY 13/31 for FULL STOP/TOUCH & GO
+                <span class="underline-italic">F-HXCD</span> on <span class="underline-italic">LEFT/RIGHT</span> downwind <span class="underline-italic">RWY 13/31</span> for <span class="underline-italic">FULL STOP/TOUCH & GO</span>
              </em>
          </blockquote>
         </div>
@@ -564,7 +583,7 @@
           <br/>
           <blockquote>
              <em>
-                F-HXCD on LEFT/RIGHT base RWY 13/31 for FULL STOP/TOUCH & GO
+                <span class="underline-italic">F-HXCD</span> on <span class="underline-italic">LEFT/RIGHT</span> base <span class="underline-italic">RWY 13/31</span> for <span class="underline-italic">FULL STOP/TOUCH & GO</span>
              </em>
          </blockquote>
         </div>
@@ -575,7 +594,7 @@
           <br/>
           <blockquote>
              <em>
-                F-HXCD final RWY 13/31 for FULL STOP/TOUCH & GO
+                <span class="underline-italic">F-HXCD</span> final <span class="underline-italic">RWY 13/31</span> for <span class="underline-italic">FULL STOP/TOUCH & GO</span>
              </em>
          </blockquote>
         </div>
@@ -586,7 +605,7 @@
           <br/>
           <blockquote>
              <em>
-                F-HXCD vacated via A/B/C
+                <span class="underline-italic">F-HXCD</span> vacated via <span class="underline-italic">A/B/C</span>
              </em>
          </blockquote>
         </div>
@@ -597,7 +616,7 @@
           <br/>
           <blockquote>
              <em>
-                F-HXCD shutting down
+                <span class="underline-italic">F-HXCD</span> shutting down
              </em>
          </blockquote>
         </div>
@@ -713,6 +732,4 @@
   </div>
 </section>
 </body>
-
 </html>
-
